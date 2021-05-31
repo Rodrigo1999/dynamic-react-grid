@@ -54,7 +54,7 @@ var Media = styled_components_1.default.div(function (props) { return utils_1.me
     justifyContent: props.row && props.justify,
     alignContent: props.row && props.align,
     alignItems: props.row && props.alignItems,
-    width: props.row && props[Object.keys(props.breakpoints)[0]] != true && utils_1.mapObject(props.spacing, function (_a) {
+    width: props.row && props[Object.keys(props.breakpoints)[0]] !== true && utils_1.mapObject(props.spacing, function (_a) {
         var key = _a[0], val = _a[1];
         return "calc(100% + " + val * spacingConst * 2 + "px)";
     }),
@@ -70,7 +70,7 @@ var Media = styled_components_1.default.div(function (props) { return utils_1.me
         var spacing = getSpacing(props.spacing);
         if (breakpoint && breakpoint !== true)
             return "calc(" + 100 * breakpoint / 12 + "% + " + (spacing[key] || spacing) + "px)";
-        if (i == 0 && !props.row)
+        if (i === 0 && !props.row)
             return '100%';
         return;
     }),
@@ -80,7 +80,7 @@ var Media = styled_components_1.default.div(function (props) { return utils_1.me
         var spacing = getSpacing(props.spacing);
         if (breakpoint && breakpoint !== true)
             return "calc(" + 100 * breakpoint / 12 + "% + " + (spacing[key] || spacing) + "px)";
-        if (i == 0 && breakpoint !== true)
+        if (i === 0 && breakpoint !== true)
             return '100%';
         return;
     }),
