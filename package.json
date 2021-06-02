@@ -10,9 +10,26 @@
   "files": [
     "dist"
   ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "grid",
+    "dinamic",
+    "dinamic-grid",
+    "materia-ui",
+    "material-ui-grid",
+    "material-ui/grid",
+    "material-grid",
+    "breakpoints",
+    "typescript-grid",
+    "react",
+    "grade",
+    "hooks"
+  ],
+  "author": "Rodrigo Santos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rodrigo1999/dinamic-grid/issues"
+  },
+  "homepage": "https://github.com/Rodrigo1999/dinamic-grid#readme",
   "types": "./dist/index.d.ts",
   "peerDependencies": {
     "react": "^17.0.2",
