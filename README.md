@@ -5,7 +5,7 @@
 Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do material-ui, contendo atribuições semelhantes.
 
 ![Imagem de exemplo](https://uploaddeimagens.com.br/images/003/272/326/full/Captura_de_tela_de_2021-06-02_21-51-52.png?1622681532)
-# Props:
+## Props:
 
  Nome | valor |  Descrição  |
 | ----- | -------- | ----------- |
@@ -41,7 +41,7 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
 
 Isso vale para todas as props a cima, exceto a props `row`
 
-# breakpoints:
+## breakpoints:
 
 Por padrão há os seguintes pontos de quebra:
 
