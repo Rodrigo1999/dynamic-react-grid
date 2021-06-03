@@ -20,6 +20,7 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
 | self | `auto` `center` `flex-start` `flex-end` `baseline` `stretch` `inherit` `initial` `unset` | valores do align-self. Padrão `wrap` |
 | order | `0...infinity` | valores do order |
 
+<br/><br/>
 
 ## Ramificações dos breakpoints:
 
@@ -42,6 +43,7 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
 
 Isso vale para todas as props acima, exceto a props `row`
 
+<br/><br/>
 ## breakpoints:
 
 Por padrão há os seguintes pontos de quebra:
@@ -78,6 +80,8 @@ No entanto vc pode criar seus próprios pontos:
 ```
 > você também pode usar window.breakpoints = {/*...*/} que o dinamic-grid irá detectar automaticamente, mas não é recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações do lado do servidor, pra reverter isso no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
 
+<br/><br/>
+
 ## utilizades públicas:
 
 úteis para serem usadas com styled-components
@@ -94,3 +98,5 @@ No entanto vc pode criar seus próprios pontos:
         width: mapObject({xs:20, sm:30, md:40}, [key, val] => [`${key}-m`, `calc(100 - ${val}px)`]) // retorno {xs-m:'calc(100 - 20px)', sm-m:'calc(100 - 30px)', ...}
     })
 ```
+
+## Em breve teremos DEMO
