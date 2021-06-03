@@ -1,5 +1,12 @@
 # dinamic-grid
 
+```bash
+    npm install --save dinamic-grid
+```
+```bash
+    yarn add dinamic-grid
+```
+
 ### Grid dinâmica para react, responsíva e inspirada na grade do material-ui, no entanto trazendo maiores simplicidades, funcionalidades e customizações.
 
 Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do material-ui, contendo atribuições semelhantes.
@@ -20,7 +27,7 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
 | self | `auto` `center` `flex-start` `flex-end` `baseline` `stretch` `inherit` `initial` `unset` | valores do align-self. Padrão `wrap` |
 | order | `0...infinity` | valores do order |
 
-<br/><br/>
+<br/>
 
 ## Ramificações dos breakpoints
 
@@ -43,7 +50,8 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
 
 Isso vale para todas as props acima, exceto a props `row`
 
-<br/><br/>
+<br/>
+
 ## breakpoints
 
 Por padrão há os seguintes pontos de quebra:
@@ -80,7 +88,7 @@ No entanto vc pode criar seus próprios pontos:
 ```
 > você também pode usar window.breakpoints = {/*...*/} que o dinamic-grid irá detectar automaticamente, mas não é recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações do lado do servidor, pra reverter isso no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
 
-<br/><br/>
+<br/>
 
 ## Grade Aninhada
 
@@ -96,7 +104,8 @@ As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser co
     </Grid>
 ```
 
-<br/><br/>
+<br/>
+
 ## Limitações
 ### Margem negativa
 
@@ -115,7 +124,7 @@ Há uma limitação com a margem negativa que usamos para implementar o espaçam
     </body>
 ```
 
-<br/><br/>
+<br/>
 
 ## Leiaute Automático
 
@@ -130,9 +139,9 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
     </Grid>
 ```
 
-<br/><br/>
+<br/>
 
-## utilizades públicas
+## Utilidades públicas
 
 úteis para serem usadas com styled-components
 

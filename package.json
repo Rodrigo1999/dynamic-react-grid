@@ -1,6 +1,6 @@
 {
   "name": "dinamic-grid",
-  "version": "0.0.9",
+  "version": "1.0.1",
   "description": "Grid dinâmica para react, responsíva e inspirada na grade do material-ui, no entanto trazendo maiores simplicidades, funcionalidades e customizações.",
   "main": "./dist/index.js",
   "scripts": {
