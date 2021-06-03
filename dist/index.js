@@ -46,7 +46,7 @@ var styled_components_1 = __importDefault(require("styled-components"));
 var utils_1 = require("./utils");
 var spacingConst = 4;
 var getSpacing = function (spacing) { return utils_1.mapObject(spacing, function (_a) {
-    var key = _a[0], val = _a[1];
+    var val = _a[1];
     return val * spacingConst * 2;
 }); };
 var Media = styled_components_1.default.div(function (props) { return utils_1.media(props.breakpoints)({
@@ -55,11 +55,11 @@ var Media = styled_components_1.default.div(function (props) { return utils_1.me
     alignContent: props.row && props.align,
     alignItems: props.row && props.alignItems,
     width: props.row && props[Object.keys(props.breakpoints)[0]] !== true && utils_1.mapObject(props.spacing, function (_a) {
-        var key = _a[0], val = _a[1];
+        var val = _a[1];
         return "calc(100% + " + val * spacingConst * 2 + "px)";
     }),
     margin: props.row && utils_1.mapObject(props.spacing, function (_a) {
-        var key = _a[0], val = _a[1];
+        var val = _a[1];
         return -(val * spacingConst);
     }),
     flexWrap: props.row && props.wrap,
@@ -92,7 +92,7 @@ var Grid = styled_components_1.default(Media)(templateObject_1 || (templateObjec
     return row && 'flex';
 }, function (props) { return props.row && utils_1.media(props.breakpoints)({
     padding: utils_1.mapObject(props.spacing, function (_a) {
-        var key = _a[0], val = _a[1];
+        var val = _a[1];
         return val * spacingConst;
     }),
 }); });

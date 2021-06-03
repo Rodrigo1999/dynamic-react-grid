@@ -82,6 +82,40 @@ No entanto vc pode criar seus próprios pontos:
 
 <br/><br/>
 
+## Grade Aninhada:
+
+As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser combinados.
+
+```jsx
+    <Grid row>
+        <Grid row xs={12} md={6}>
+            <Grid lg={5}>
+                ...
+            </Grid>
+        </Grid>
+    </Grid>
+```
+
+<br/><br/>
+## Limitações:
+### Margem negativa
+
+Há uma limitação com a margem negativa que usamos para implementar o espaçamento entre itens. Uma barra de rolagem horizontal irá aparecer se uma margem negativa vai além do `<body>`. Existem 3 soluções disponíveis:
+
+1. Não usar o recurso de espaçamento e implementá-lo no espaço do usuário spacing={0} (Padrão).
+2. Aplicando padding ao pai com pelo menos 4 vezes o valor de espaçamento aplicado ao filho:
+
+```jsx
+    <body>
+        <div style={{ padding: 20 }}>
+            <Grid row spacing={5}>
+                //...
+            </Grid>
+        </div>
+    </body>
+```
+
+<br/><br/>
 ## utilizades públicas:
 
 úteis para serem usadas com styled-components

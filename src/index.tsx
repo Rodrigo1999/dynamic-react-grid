@@ -5,14 +5,14 @@ import {Props, Spacing, mapObjectParams} from './types';
 
 let spacingConst = 4;
 
-let getSpacing = (spacing: Spacing) => mapObject(spacing, ([key, val]:mapObjectParams) => val * spacingConst * 2);
+let getSpacing = (spacing: Spacing) => mapObject(spacing, ([, val]:mapObjectParams) => val * spacingConst * 2);
 let Media = styled.div((props: Props) => media(props.breakpoints)({
     flexDirection: props.row && props.direction,
     justifyContent: props.row && props.justify,
     alignContent: props.row && props.align,
     alignItems: props.row && props.alignItems,
-    width: props.row && props[(Object.keys(props.breakpoints) as Array<keyof typeof props.breakpoints>)[0]] !== true && mapObject(props.spacing, ([key, val]:mapObjectParams) => `calc(100% + ${val * spacingConst * 2}px)`),
-    margin: props.row && mapObject(props.spacing, ([key, val]:mapObjectParams) => -(val * spacingConst)),
+    width: props.row && props[(Object.keys(props.breakpoints) as Array<keyof typeof props.breakpoints>)[0]] !== true && mapObject(props.spacing, ([, val]:mapObjectParams) => `calc(100% + ${val * spacingConst * 2}px)`),
+    margin: props.row && mapObject(props.spacing, ([, val]:mapObjectParams) => -(val * spacingConst)),
     flexWrap: props.row && props.wrap,
     alignSelf: props.self,
     maxWidth: mapObject(props.breakpoints||{}, ([key]:mapObjectParams, i:number) => {
@@ -37,7 +37,7 @@ let Grid = styled(Media)`
     flex-grow: 1;
     & > *{
         ${props => props.row && media(props.breakpoints)({
-            padding: mapObject(props.spacing, ([key, val]:mapObjectParams) => val * spacingConst),
+            padding: mapObject(props.spacing, ([, val]:mapObjectParams) => val * spacingConst),
         })}
     }
 `
