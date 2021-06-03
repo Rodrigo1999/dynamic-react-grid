@@ -10,7 +10,7 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
  Nome | valor |  Descrição  |
 | ----- | -------- | ----------- |
 | row | `true/false` | Se atribuído, indica ao componente que ele deve ser uma linha |
-| xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recomendável: `0...12` (mas pode ser do 0 ao infinito, porém isso é loucura) | São os breakpoints padrão, mas você pode customizar e criar os seus, mais tarde veremos isso. |
+| xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recomendável: `0...12` (mas pode ser do 0 ao infinito, porém isso é loucura) | São os breakpoints padrão, mas você pode customizar e criar os seus (mais tarde veremos isso). |
 | spacing | `0...infinity` | Definito na tag `Grid` com props `row`. Indica o Espaçamento das colunas, vai de 0 ao infinito. Padrão `0` |
 | direction | `row` `row-reverse` `column` `column-reverse` `inherit` `initial` `unset` | valores do flex-direction |
 | justify | `center` `flex-start` `flex-end` `space-between` `space-around` `inherit` `initial` `unset` | valores do justify-content |
@@ -34,7 +34,8 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
     </Grid>
 
     <Grid row direction='row' ou direction={{xs:'row', sm:'row-reverse', md:'column-reverse', /*...*/}}>
-        ...
+        <Grid xs={12} md={6}>
+        </Grid>
     </Grid>
     
 ```
