@@ -10,9 +10,9 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
  Nome | valor |  Descrição  |
 | ----- | -------- | ----------- |
 | row | `true/false` | Se atribuído, indica ao componente que ele deve ser uma linha |
-| xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recomendável: `0...12` (mas pode ser do 0 ao infinito, porém isso é loucura) | São os breakpoints padrão, mas você pode customizar e criar os seus, mais tarde veremos isso. Se |
+| xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recomendável: `0...12` (mas pode ser do 0 ao infinito, porém isso é loucura) | São os breakpoints padrão, mas você pode customizar e criar os seus, mais tarde veremos isso. |
 | spacing | `0...infinity` | Definito na tag `Grid` com props `row`. Indica o Espaçamento das colunas, vai de 0 ao infinito. Padrão `0` |
-| direction | row, row-reverse, column, column-reverse, inherit, initial, unset  | valores do flex-direction |
+| direction | `row` `row-reverse` `column` `column-reverse` `inherit` `initial` `unset` | valores do flex-direction |
 | justify | `center` `flex-start` `flex-end` `space-between` `space-around` `inherit` `initial` `unset` | valores do justify-content |
 | align | `center` `flex-start` `flex-end` `space-between` `space-around` `stretch` `inherit` `initial` `unset` | valores do align-content |
 | alignItems | `normal` `stretch` `center` `start` `end` `flex-start` `flex-end` `self-start` `self-end` `baseline` `first baseline` `last baseline` `safe center` `unsafe center` `inherit` `initial` `unset` | valores do align-items |
@@ -59,7 +59,7 @@ Por padrão há os seguintes pontos de quebra:
     }
 ```
 
-No entanto vc pode cirar seus próprios pontos:
+No entanto vc pode criar seus próprios pontos:
 
 ```jsx 
     import {WithBreakpoints} from 'dinamic-grid'
