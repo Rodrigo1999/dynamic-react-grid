@@ -29,7 +29,7 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
     import Grid from 'dinamic-grid'
 
     <Grid row spacing={2} ou spacing={{xs:1, sm:4, md:3, /*...*/}}>
-        <Grid order={1} or order={{xs:1, sm:2, md:4, /*...*/}}>
+        <Grid order={1} ou order={{xs:1, sm:2, md:4, /*...*/}}>
         </Grid>
     </Grid>
 
@@ -40,3 +40,38 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
 ```
 
 Isso vale para todas as props a cima, exceto a props `row`
+
+# breakpoints:
+
+Por padrão há os seguintes pontos de quebra:
+
+```js
+    {
+        xs: 0,
+        'xs-m': 300,
+        sm: 600,
+        'sm-m': 780,
+        md: 960,
+        'md-m': 1120,
+        lg: 1280,
+        'lg-m': 1600,
+        xl: 1920
+    }
+```
+
+No entanto vc pode cirar seus próprios pontos:
+
+```jsx 
+    import {WithBreakpoints} from 'dinamic-grid'
+
+    let Grid = WithBreakpoints({
+        xs:0,
+        sm:400,
+        jsIsLife:600,
+        reactIsGood:1000
+    })
+
+    <Grid row>
+        ...
+    </Grid>
+```
