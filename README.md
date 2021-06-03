@@ -23,7 +23,7 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
 
 ## Ramificações dos breakpoints:
 
-eu também posso colocar ramificações de breakpoints para as props mencionadas a cima, exemplo:
+eu também posso colocar ramificações de breakpoints para as props mencionadas acima, exemplo:
 
 ```jsx
     import Grid from 'dinamic-grid'
@@ -39,7 +39,7 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
     
 ```
 
-Isso vale para todas as props a cima, exceto a props `row`
+Isso vale para todas as props acima, exceto a props `row`
 
 ## breakpoints:
 
@@ -74,4 +74,22 @@ No entanto vc pode criar seus próprios pontos:
     <Grid row>
         ...
     </Grid>
+```
+> você também pode usar window.breakpoints = {/*...*/} mas não recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações ao lado do servidor, mas no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
+
+## utilizades públicas:
+
+úteis para serem usadas com styled-components
+
+```jsx
+    import {media, mapObject} from 'dinamic-grid'
+
+
+    styled.div((props: Props) => media(breakpoints)({
+        width:{xs:20, md:'50%', sm:'100vw'} //ou width:100
+        //ou
+        width: mapObject({xs:20, sm:30, md:40}, [key, val] => `calc(100 - ${val}px)`) // retorno {xs:'calc(100 - 20px)', sm:'calc(100 - 30px)', ...}
+        //ou 
+        width: mapObject({xs:20, sm:30, md:40}, [key, val] => [`${key}-m`, `calc(100 - ${val}px)`]) // retorno {xs-m:'calc(100 - 20px)', sm-m:'calc(100 - 30px)', ...}
+    })
 ```
