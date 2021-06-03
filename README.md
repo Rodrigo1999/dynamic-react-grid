@@ -5,7 +5,7 @@
 Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do material-ui, contendo atribuições semelhantes.
 
 ![Imagem de exemplo](https://uploaddeimagens.com.br/images/003/272/326/full/Captura_de_tela_de_2021-06-02_21-51-52.png?1622681532)
-## Props:
+## Props
 
  Nome | valor |  Descrição  |
 | ----- | -------- | ----------- |
@@ -22,7 +22,7 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
 
 <br/><br/>
 
-## Ramificações dos breakpoints:
+## Ramificações dos breakpoints
 
 eu também posso colocar ramificações de breakpoints para as props mencionadas acima, exemplo:
 
@@ -44,7 +44,7 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
 Isso vale para todas as props acima, exceto a props `row`
 
 <br/><br/>
-## breakpoints:
+## breakpoints
 
 Por padrão há os seguintes pontos de quebra:
 
@@ -82,7 +82,7 @@ No entanto vc pode criar seus próprios pontos:
 
 <br/><br/>
 
-## Grade Aninhada:
+## Grade Aninhada
 
 As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser combinados.
 
@@ -97,7 +97,7 @@ As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser co
 ```
 
 <br/><br/>
-## Limitações:
+## Limitações
 ### Margem negativa
 
 Há uma limitação com a margem negativa que usamos para implementar o espaçamento entre itens. Uma barra de rolagem horizontal irá aparecer se uma margem negativa vai além do `<body>`. Existem 3 soluções disponíveis:
@@ -116,7 +116,23 @@ Há uma limitação com a margem negativa que usamos para implementar o espaçam
 ```
 
 <br/><br/>
-## utilizades públicas:
+
+## Leiaute Automático
+
+Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 definido por padrão, basta não espercifica o valor do breakpoint:
+
+```jsx
+    <Grid row spacing={2}>
+        <Grid xs>xs</Grid>
+        <Grid xs>xs</Grid>
+        <Grid xs>xs</Grid>
+        <Grid xs>xs</Grid>
+    </Grid>
+```
+
+<br/><br/>
+
+## utilizades públicas
 
 úteis para serem usadas com styled-components
 
