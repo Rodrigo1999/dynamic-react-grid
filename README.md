@@ -76,7 +76,7 @@ No entanto vc pode criar seus próprios pontos:
         ...
     </Grid>
 ```
-> você também pode usar window.breakpoints = {/*...*/} mas não recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações ao lado do servidor, mas no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
+> você também pode usar window.breakpoints = {/*...*/} que o dinamic-grid irá detectar automaticamente, mas não é recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações do lado do servidor, pra reverter isso no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
 
 ## utilizades públicas:
 
@@ -86,7 +86,7 @@ No entanto vc pode criar seus próprios pontos:
     import {media, mapObject} from 'dinamic-grid'
 
 
-    styled.div((props: Props) => media(breakpoints)({
+    styled.div(props => media(breakpoints)({
         width:{xs:20, md:'50%', sm:'100vw'} //ou width:100
         //ou
         width: mapObject({xs:20, sm:30, md:40}, [key, val] => `calc(100 - ${val}px)`) // retorno {xs:'calc(100 - 20px)', sm:'calc(100 - 30px)', ...}
