@@ -54,20 +54,20 @@ var Media = styled_components_1.default.div(function (props) { return utils_1.me
     justifyContent: props.row && props.justify,
     alignContent: props.row && props.align,
     alignItems: props.row && props.alignItems,
-    width: props.row && props[Object.keys(props.breakpoints)[0]] !== true && utils_1.mapObject(props.spacing, function (_a) {
+    width: props.row && props[Object.keys(props.breakpoints)[0]] !== true && utils_1.mapObject(props._spacing, function (_a) {
         var val = _a[1];
         return "calc(100% + " + val * spacingConst * 2 + "px)";
     }),
-    margin: props.row && utils_1.mapObject(props.spacing, function (_a) {
+    margin: props.row && utils_1.mapObject(props._spacing, function (_a) {
         var val = _a[1];
         return -(val * spacingConst);
     }),
-    flexWrap: props.row && props.wrap,
+    flexWrap: props.row && props._wrap,
     alignSelf: props.self,
     maxWidth: utils_1.mapObject(props.breakpoints || {}, function (_a, i) {
         var key = _a[0];
         var breakpoint = props[key];
-        var spacing = getSpacing(props.spacing);
+        var spacing = getSpacing(props._spacing);
         if (breakpoint && breakpoint !== true)
             return "calc(" + 100 * breakpoint / 12 + "% + " + (spacing[key] || spacing) + "px)";
         if (i === 0 && !props.row)
@@ -77,7 +77,7 @@ var Media = styled_components_1.default.div(function (props) { return utils_1.me
     flexBasis: utils_1.mapObject(props.breakpoints || {}, function (_a, i) {
         var key = _a[0];
         var breakpoint = props[key];
-        var spacing = getSpacing(props.spacing);
+        var spacing = getSpacing(props._spacing);
         if (breakpoint && breakpoint !== true)
             return "calc(" + 100 * breakpoint / 12 + "% + " + (spacing[key] || spacing) + "px)";
         if (i === 0 && breakpoint !== true)
@@ -91,7 +91,7 @@ var Grid = styled_components_1.default(Media)(templateObject_1 || (templateObjec
     var row = _a.row;
     return row && 'flex';
 }, function (props) { return props.row && utils_1.media(props.breakpoints)({
-    padding: utils_1.mapObject(props.spacing, function (_a) {
+    padding: utils_1.mapObject(props._spacing, function (_a) {
         var val = _a[1];
         return val * spacingConst;
     }),
@@ -109,7 +109,7 @@ var MyGrid = function (_a, ref) {
         'lg-m': 1600,
         xl: 1920
     };
-    return (jsx_runtime_1.jsx(Grid, __assign({}, other, { row: row, breakpoints: breakpoints, spacing: spacing, justify: justify, align: align, direction: direction, alignItems: alignItems, wrap: wrap, ref: ref, order: order, self: self }, { children: children }), void 0));
+    return (jsx_runtime_1.jsx(Grid, __assign({}, other, { row: row, breakpoints: breakpoints, _spacing: spacing, _wrap: wrap, justify: justify, align: align, direction: direction, alignItems: alignItems, ref: ref, order: order, self: self }, { children: children }), void 0));
 };
 __exportStar(require("./utils"), exports);
 var WithBreakpoints = function (props) { return react_1.forwardRef(MyGrid.bind({ breakpoints: props })); };

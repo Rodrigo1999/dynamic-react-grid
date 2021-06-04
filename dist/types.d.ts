@@ -21,3 +21,7 @@ export interface Props {
     'lg-m'?: number;
     xl?: number;
 }
+export interface PropsMedia extends Props {
+    _spacing: Spacing;
+    _wrap: Props['wrap'];
+}
