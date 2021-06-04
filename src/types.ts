@@ -1,6 +1,3 @@
-
-export type Spacing = number | object;
-export type mapObjectParams = [any, number]
 export interface Props {
     breakpoints: object;
     row: boolean;
@@ -8,7 +5,7 @@ export interface Props {
     justify: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'inherit' | 'initial' | 'unset';
     align: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around' | 'stretch' | 'inherit' | 'initial' | 'unset';
     alignItems: 'normal' | 'stretch' | 'center' | 'start' | 'end' | 'flex-start' | 'flex-end' | 'self-start' | 'self-end' | 'baseline' | 'first baseline' | 'last baseline' | 'safe center' | 'unsafe center' | 'inherit' | 'initial' | 'unset';
-    spacing: Spacing;
+    spacing: number | object;
     wrap: 'nowrap' | 'wrap' | 'wrap-reverse' | 'inherit' | 'initial' | 'unset';
     self: 'auto' | 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch' | 'inherit' | 'initial' | 'unset';
     order: number;
@@ -23,7 +20,9 @@ export interface Props {
     xl?: number
 }
 
+export type Spacing = Props['spacing'];
+export type mapObjectParams = [any, number]
 export interface PropsMedia extends Props {
-    _spacing: Spacing;
+    _spacing: Props['spacing'];
     _wrap: Props['wrap'];
 }
