@@ -1,12 +1,13 @@
 # dinamic-grid
 
+## Instalação
 ```bash
     npm install --save dinamic-grid
 ```
 ```bash
     yarn add dinamic-grid
 ```
-
+**[DEMO](https://codesandbox.io/s/dinamic-grid-nviw4?file=/src/App.js)**
 ### Grid dinâmica para react, responsíva e inspirada na grade do material-ui, no entanto trazendo maiores simplicidades, funcionalidades e customizações.
 
 Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do material-ui, contendo atribuições semelhantes.
@@ -157,5 +158,3 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
         width: mapObject({xs:20, sm:30, md:40}, [key, val] => [`${key}-m`, `calc(100 - ${val}px)`]) // retorno {xs-m:'calc(100 - 20px)', sm-m:'calc(100 - 30px)', ...}
     })
 ```
-
-## Em breve teremos DEMO
