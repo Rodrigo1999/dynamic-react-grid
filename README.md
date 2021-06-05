@@ -151,10 +151,10 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
 
 
     styled.div(props => media(breakpoints)({
-        padding:30,
-        color:'red',
+        padding: 30,
+        color: 'red',
         // --------------------------------------
-        width:{xs:20, md:'50%', sm:'100vw'}
+        width: {xs:20, md:'50%', sm:'100vw'}
         //ou
         width: mapObject({xs:20, sm:30, md:40}, [key, val] => `calc(100 - ${val}px)`) // retorno {xs:'calc(100 - 20px)', sm:'calc(100 - 30px)', ...}
         //ou 
