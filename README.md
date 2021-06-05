@@ -19,7 +19,7 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
 | ----- | -------- | ----------- |
 | row | `true/false` | Se atribuído, indica ao componente que ele deve ser uma linha |
 | xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recomendável: `0...12` (mas pode ser do 0 ao infinito, porém isso é loucura) | São os breakpoints padrão, mas você pode customizar e criar os seus (mais tarde veremos isso). |
-| spacing | `0...infinity` | Definito na tag `Grid` com props `row`. Indica o Espaçamento das colunas, vai de 0 ao infinito. Padrão `0` |
+| spacing | `0...infinity` | Definido na tag `Grid` com props `row`. Indica o Espaçamento das colunas, vai de 0 ao infinito. Padrão `0` |
 | direction | `row` `row-reverse` `column` `column-reverse` `inherit` `initial` `unset` | valores do flex-direction |
 | justify | `center` `flex-start` `flex-end` `space-between` `space-around` `inherit` `initial` `unset` | valores do justify-content |
 | align | `center` `flex-start` `flex-end` `space-between` `space-around` `stretch` `inherit` `initial` `unset` | valores do align-content |
@@ -93,7 +93,7 @@ No entanto vc pode criar seus próprios pontos:
 
 ## Grade Aninhada
 
-As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser combinados.
+As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser combinadas.
 
 ```jsx
     <Grid row>
@@ -110,7 +110,7 @@ As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser co
 ## Limitações
 ### Margem negativa
 
-Há uma limitação com a margem negativa que usamos para implementar o espaçamento entre itens. Uma barra de rolagem horizontal irá aparecer se uma margem negativa vai além do `<body>`. Existem 3 soluções disponíveis:
+Há uma limitação com a margem negativa que usamos para implementar o espaçamento entre itens. Uma barra de rolagem horizontal irá aparecer se uma margem negativa vai além do `<body>`. Existem 2 soluções disponíveis:
 
 1. Não usar o recurso de espaçamento e implementá-lo no espaço do usuário spacing={0} (Padrão).
 2. Aplicando padding ao pai com pelo menos 4 vezes o valor de espaçamento aplicado ao filho:
@@ -129,7 +129,7 @@ Há uma limitação com a margem negativa que usamos para implementar o espaçam
 
 ## Leiaute Automático
 
-Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 definido por padrão, basta não espercifica o valor do breakpoint:
+Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 definido por padrão, basta definir como true o valor do primeiro breakpoint:
 
 ```jsx
     <Grid row spacing={2}>
@@ -151,7 +151,10 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
 
 
     styled.div(props => media(breakpoints)({
-        width:{xs:20, md:'50%', sm:'100vw'} //ou width:100
+        padding:30,
+        color:'red',
+        // --------------------------------------
+        width:{xs:20, md:'50%', sm:'100vw'}
         //ou
         width: mapObject({xs:20, sm:30, md:40}, [key, val] => `calc(100 - ${val}px)`) // retorno {xs:'calc(100 - 20px)', sm:'calc(100 - 30px)', ...}
         //ou 
