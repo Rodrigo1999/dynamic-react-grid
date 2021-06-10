@@ -1,6 +1,6 @@
 {
   "name": "dinamic-grid",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Grid dinâmica para react, responsíva e inspirada na grade do material-ui, no entanto trazendo maiores simplicidades, funcionalidades e customizações.",
   "main": "./dist/index.js",
   "scripts": {
@@ -30,6 +30,10 @@
     "url": "https://github.com/Rodrigo1999/dinamic-grid/issues"
   },
   "homepage": "https://github.com/Rodrigo1999/dinamic-grid#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rodrigo1999/dinamic-grid.git"
+  },
   "types": "./dist/index.d.ts",
   "peerDependencies": {
     "react": "^17.0.2",
