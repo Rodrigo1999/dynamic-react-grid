@@ -1,6 +1,6 @@
 import {css} from 'styled-components';
 
-export function mapObject(value, map){
+export function mapMedia(value, map){
     if(typeof value != 'object') return [value].concat(map([value, value], 0)).slice(-2)[1];
     let obj = Object.entries(value).map((e, i) => [e[0]].concat(map(e, i)).slice(-2));
     return Object.fromEntries(obj);
@@ -32,4 +32,15 @@ export function media(breakpoints=(typeof this?.globalThis != 'undefined' ? this
 
         return keyMap(obj).concat(';', propertyIsObjStr);
     }
+}
+export let breakpoints = {
+    xs: 0,
+    'xs-m': 300,
+    sm: 600,
+    'sm-m': 780,
+    md: 960,
+    'md-m': 1120,
+    lg: 1280,
+    'lg-m': 1600,
+    xl: 1920
 }

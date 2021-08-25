@@ -1,5 +1,7 @@
 # dinamic-grid
 
+# Este pacote mudou de repositório, pesquise por `@dynamic/react-grid`
+
 ## Instalação
 ```bash
     npm install --save dinamic-grid
@@ -147,17 +149,33 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
 úteis para serem usadas com styled-components
 
 ```jsx
-    import {media, mapObject} from 'dinamic-grid'
+    import {media, mapMedia, breakpoints} from 'dinamic-grid'
 
 
-    styled.div(props => media(breakpoints)({
+    let Container = styled.div(props => media(breakpoints)({
         padding: 30,
         color: 'red',
+        display: props.style.display,
         // --------------------------------------
         width: {xs:20, md:'50%', sm:'100vw'}
         //ou
-        width: mapObject({xs:20, sm:30, md:40}, [key, val] => `calc(100 - ${val}px)`) // retorno {xs:'calc(100 - 20px)', sm:'calc(100 - 30px)', ...}
+        width: mapMedia({xs:20, sm:30, md:40}, [key, val] => `calc(100px - ${val}px)`) // retorno {xs:'calc(100px - 20px)', sm:'calc(100px - 30px)', md:'calc(100px - 40px)'}
         //ou 
-        width: mapObject({xs:20, sm:30, md:40}, [key, val] => [`${key}-m`, `calc(100 - ${val}px)`]) // retorno {xs-m:'calc(100 - 20px)', sm-m:'calc(100 - 30px)', ...}
-    })
+        width: mapMedia({xs:20, sm:30, md:40}, [key, val] => [`${key}-m`, `calc(100px - ${val}px)`]) // retorno {xs-m:'calc(100px - 20px)', sm-m:'calc(100px - 30px)', ...}
+    }))
+
+    //...
+
+    <Container 
+        style={{
+            display: {
+                xs:'flex', 
+                sm:'block', 
+                md:'none', 
+                /*...*/
+            }
+        }}
+    >
+        ...
+    </Container>
 ```

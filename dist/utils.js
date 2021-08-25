@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.media = exports.mapObject = void 0;
+exports.breakpoints = exports.media = exports.mapMedia = void 0;
 var styled_components_1 = require("styled-components");
-function mapObject(value, map) {
+function mapMedia(value, map) {
     if (typeof value != 'object')
         return [value].concat(map([value, value], 0)).slice(-2)[1];
     var obj = Object.entries(value).map(function (e, i) { return [e[0]].concat(map(e, i)).slice(-2); });
     return Object.fromEntries(obj);
 }
-exports.mapObject = mapObject;
+exports.mapMedia = mapMedia;
 function media(breakpoints) {
     if (breakpoints === void 0) { breakpoints = (typeof (this === null || this === void 0 ? void 0 : this.globalThis) != 'undefined' ? this === null || this === void 0 ? void 0 : this.globalThis : window).breakpoints; }
     function keyMap(obj, breakpoint, onlyObject) {
@@ -38,3 +38,14 @@ function media(breakpoints) {
     };
 }
 exports.media = media;
+exports.breakpoints = {
+    xs: 0,
+    'xs-m': 300,
+    sm: 600,
+    'sm-m': 780,
+    md: 960,
+    'md-m': 1120,
+    lg: 1280,
+    'lg-m': 1600,
+    xl: 1920
+};

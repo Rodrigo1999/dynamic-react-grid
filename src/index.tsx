@@ -1,28 +1,28 @@
 import React, {forwardRef} from 'react';
 import styled from 'styled-components';
-import {media, mapObject} from './utils';
+import {media, mapMedia, breakpoints} from './utils';
 import {Props, PropsMedia, Spacing, mapObjectParams} from './types';
 
 let spacingConst = 4;
 
-let getSpacing = (spacing: Spacing) => mapObject(spacing, ([, val]:mapObjectParams) => val * spacingConst * 2);
+let getSpacing = (spacing: Spacing) => mapMedia(spacing, ([, val]:mapObjectParams) => val * spacingConst * 2);
 let Media = styled.div((props: PropsMedia) => media(props.breakpoints)({
     flexDirection: props.row && props.direction,
     justifyContent: props.row && props.justify,
     alignContent: props.row && props.align,
     alignItems: props.row && props.alignItems,
-    width: props.row && props[(Object.keys(props.breakpoints) as Array<keyof typeof props.breakpoints>)[0]] !== true && mapObject(props._spacing, ([, val]:mapObjectParams) => `calc(100% + ${val * spacingConst * 2}px)`),
-    margin: props.row && mapObject(props._spacing, ([, val]:mapObjectParams) => -(val * spacingConst)),
+    width: props.row && props[(Object.keys(props.breakpoints) as Array<keyof typeof props.breakpoints>)[0]] !== true && mapMedia(props._spacing, ([, val]:mapObjectParams) => `calc(100% + ${val * spacingConst * 2}px)`),
+    margin: props.row && mapMedia(props._spacing, ([, val]:mapObjectParams) => -(val * spacingConst)),
     flexWrap: props.row && props._wrap,
     alignSelf: props.self,
-    maxWidth: mapObject(props.breakpoints||{}, ([key]:mapObjectParams, i:number) => {
+    maxWidth: mapMedia(props.breakpoints||{}, ([key]:mapObjectParams, i:number) => {
         let breakpoint = props[key];
         let spacing = getSpacing(props._spacing);
         if(breakpoint && breakpoint !== true) return `calc(${100*breakpoint/12}% + ${spacing[key]||spacing}px)`;
         if(i===0 && !props.row) return '100%';
         return;
     }),
-    flexBasis: mapObject(props.breakpoints||{}, ([key]: mapObjectParams, i:number) => {
+    flexBasis: mapMedia(props.breakpoints||{}, ([key]: mapObjectParams, i:number) => {
         let breakpoint = props[key];
         let spacing = getSpacing(props._spacing);
         if(breakpoint && breakpoint !== true) return `calc(${100*breakpoint/12}% + ${spacing[key]||spacing}px)`;
@@ -37,11 +37,10 @@ let Grid = styled(Media)`
     flex-grow: 1;
     & > *{
         ${props => props.row && media(props.breakpoints)({
-            padding: mapObject(props._spacing, ([, val]:mapObjectParams) => val * spacingConst),
+            padding: mapMedia(props._spacing, ([, val]:mapObjectParams) => val * spacingConst),
         })}
     }
 `
-
 
 let MyGrid: React.ForwardRefRenderFunction<HTMLDivElement, Props>  = function({
     children,
@@ -56,22 +55,12 @@ let MyGrid: React.ForwardRefRenderFunction<HTMLDivElement, Props>  = function({
     order,
     ...other
 }, ref) {
-    let breakpoints = this?.breakpoints || {
-        xs: 0,
-        'xs-m': 300,
-        sm: 600,
-        'sm-m': 780,
-        md: 960,
-        'md-m': 1120,
-        lg: 1280,
-        'lg-m': 1600,
-        xl: 1920
-    }
+    let _breakpoints = this?.breakpoints || breakpoints;
     return (
         <Grid  
             {...other}
             row={row}
-            breakpoints={breakpoints} 
+            breakpoints={_breakpoints} 
             _spacing={spacing} 
             _wrap={wrap}
             justify={justify} 
