@@ -27,12 +27,12 @@
   "author": "Rodrigo Santos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Rodrigo1999/dinamic-grid/issues"
+    "url": "https://github.com/Rodrigo1999/dynamic-react-grid/issues"
   },
-  "homepage": "https://github.com/Rodrigo1999/dinamic-grid#readme",
+  "homepage": "https://github.com/Rodrigo1999/dynamic-react-grid#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rodrigo1999/dinamic-grid.git"
+    "url": "git+https://github.com/Rodrigo1999/dynamic-react-grid.git"
   },
   "types": "./dist/index.d.ts",
   "peerDependencies": {
