@@ -1,5 +1,5 @@
 # dynamic-react-grid
-## Instalação
+## Installation
 ```bash
     npm install --save dynamic-react-grid
 ```
@@ -7,31 +7,31 @@
     yarn add dynamic-react-grid
 ```
 **[DEMO](https://codesandbox.io/s/dinamic-grid-nviw4?file=/src/App.js)**
-### Grid dinâmica para react, responsíva e inspirada na grade do material-ui, no entanto trazendo maiores simplicidades, funcionalidades e customizações.
+### Dynamic grid for react, responsive and inspired by the material-UI grid, however bringing greater simplicities, functionalities and customizations.
 
-Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do material-ui, contendo atribuições semelhantes.
+This lib was inspired by the [Grid](https://material-ui.com/pt/components/grid/) of material-UI, containing similar assignments.
 
 ![Imagem de exemplo](https://uploaddeimagens.com.br/images/003/272/326/full/Captura_de_tela_de_2021-06-02_21-51-52.png?1622681532)
 ## Props
 
- Nome | valor |  Descrição  |
+ Name | value |  Description  |
 | ----- | -------- | ----------- |
-| row | `true/false` | Se atribuído, indica ao componente que ele deve ser uma linha |
-| xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recomendável: `0...12` (mas pode ser do 0 ao infinito, porém isso é loucura) | São os breakpoints padrão, mas você pode customizar e criar os seus (mais tarde veremos isso). |
-| spacing | `0...infinity` | Definido na tag `Grid` com props `row`. Indica o Espaçamento das colunas, vai de 0 ao infinito. Padrão `0` |
-| direction | `row` `row-reverse` `column` `column-reverse` `inherit` `initial` `unset` | valores do flex-direction |
-| justify | `center` `flex-start` `flex-end` `space-between` `space-around` `inherit` `initial` `unset` | valores do justify-content |
-| align | `center` `flex-start` `flex-end` `space-between` `space-around` `stretch` `inherit` `initial` `unset` | valores do align-content |
-| alignItems | `normal` `stretch` `center` `start` `end` `flex-start` `flex-end` `self-start` `self-end` `baseline` `first baseline` `last baseline` `safe center` `unsafe center` `inherit` `initial` `unset` | valores do align-items |
-| wrap | `nowrap` `wrap` `wrap-reverse` `inherit` `initial` `unset` | valores do flex-wrap |
-| self | `auto` `center` `flex-start` `flex-end` `baseline` `stretch` `inherit` `initial` `unset` | valores do align-self. Padrão `wrap` |
-| order | `0...infinity` | valores do order |
+| row | `true/false` | If assigned, indicates to component that it should be a line |
+| xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recommendable: `0...12` (but it can be from 0 to infinity, but this is madness) | They are the standard breakpoints, but you can customize and create yours (we'll see that later). |
+| spacing | `0...infinity` | Defined in `Grid` tag with `row` props. Indicates column spacing, ranging from 0 to infinity. Default `0` |
+| direction | `row` `row-reverse` `column` `column-reverse` `inherit` `initial` `unset` | flex-direction values |
+| justify | `center` `flex-start` `flex-end` `space-between` `space-around` `inherit` `initial` `unset` | justify-content values |
+| align | `center` `flex-start` `flex-end` `space-between` `space-around` `stretch` `inherit` `initial` `unset` | align-content values |
+| alignItems | `normal` `stretch` `center` `start` `end` `flex-start` `flex-end` `self-start` `self-end` `baseline` `first baseline` `last baseline` `safe center` `unsafe center` `inherit` `initial` `unset` | align-items values |
+| wrap | `nowrap` `wrap` `wrap-reverse` `inherit` `initial` `unset` | flex-wrap values |
+| self | `auto` `center` `flex-start` `flex-end` `baseline` `stretch` `inherit` `initial` `unset` | align-self values. Default `wrap` |
+| order | `0...infinity` | order values |
 
 <br/>
 
-## Ramificações dos breakpoints
+## Breakpoints Ramifications
 
-eu também posso colocar ramificações de breakpoints para as props mencionadas acima, exemplo:
+I can also put Breakpoints ramifications for the above mentioned props, example:
 
 ```jsx
     import Grid from 'dynamic-react-grid'
@@ -48,13 +48,13 @@ eu também posso colocar ramificações de breakpoints para as props mencionadas
     
 ```
 
-Isso vale para todas as props acima, exceto a props `row`
+This goes for all of the above props, except the `row` props
 
 <br/>
 
 ## breakpoints
 
-Por padrão há os seguintes pontos de quebra:
+By default there are the following breakpoints:
 
 ```js
     {
@@ -70,7 +70,7 @@ Por padrão há os seguintes pontos de quebra:
     }
 ```
 
-No entanto vc pode criar seus próprios pontos:
+However you can create your own points:
 
 ```jsx 
     import {WithBreakpoints} from 'dynamic-react-grid'
@@ -86,13 +86,13 @@ No entanto vc pode criar seus próprios pontos:
         ...
     </Grid>
 ```
-> você também pode usar window.breakpoints = {/*...*/} que o dynamic-react-grid irá detectar automaticamente, mas não é recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações do lado do servidor, pra reverter isso no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
+> you can also use window.breakpoints = {/*...*/} which dynamic-react-grid will automatically detect, but not recommended; if you're using React it can be, but if it's Next I don't recommend it due to problems related to server-side renderings, to revert this instead of window you can use globalThis, but then there are also issues related to the javascript or node version.
 
 <br/>
 
-## Grade Aninhada
+## Nestling grid
 
-As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser combinadas.
+The properties `row` and (the `breakpoints`) are independent. They can be combined.
 
 ```jsx
     <Grid row>
@@ -106,13 +106,13 @@ As propriedades `row` e (os `breakpoints`) são independentes. Elas podem ser co
 
 <br/>
 
-## Limitações
-### Margem negativa
+## Limitations
+### Negative margin
 
-Há uma limitação com a margem negativa que usamos para implementar o espaçamento entre itens. Uma barra de rolagem horizontal irá aparecer se uma margem negativa vai além do `<body>`. Existem 2 soluções disponíveis:
+There is a limitation with the negative margin we use to implement spacing between items. A horizontal scrollbar will appear if a negative margin goes beyond the `<body>`. There are 2 solutions available:
 
-1. Não usar o recurso de espaçamento e implementá-lo no espaço do usuário spacing={0} (Padrão).
-2. Aplicando padding ao pai com pelo menos 4 vezes o valor de espaçamento aplicado ao filho:
+1. Do not use the spacing feature and implement it in userspace spacing={0} (Default).
+2. Applying Padding to the Father with at least 4 times the spacing value applied to the child:
 
 ```jsx
     <body>
@@ -126,9 +126,9 @@ Há uma limitação com a margem negativa que usamos para implementar o espaçam
 
 <br/>
 
-## Leiaute Automático
+## Automatic leyout
 
-Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 definido por padrão, basta definir como true o valor do primeiro breakpoint:
+Both 4 columns below will have automatic widths, there is a flex-grow: 1 set by default, just set how to true the first breakpoint value:
 
 ```jsx
     <Grid row spacing={2}>
@@ -141,9 +141,9 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
 
 <br/>
 
-## Utilidades públicas
+## Public utilities
 
-úteis para serem usadas com styled-components
+useful to be used with styled-components
 
 ```jsx
     import {media, mapMedia, breakpoints} from 'dynamic-react-grid'
@@ -155,10 +155,10 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
         display: props.style.display,
         // --------------------------------------
         width: {xs:20, md:'50%', sm:'100vw'}
-        //ou
-        width: mapMedia({xs:20, sm:30, md:40}, [key, val] => `calc(100px - ${val}px)`) // retorno {xs:'calc(100px - 20px)', sm:'calc(100px - 30px)', md:'calc(100px - 40px)'}
-        //ou 
-        width: mapMedia({xs:20, sm:30, md:40}, [key, val] => [`${key}-m`, `calc(100px - ${val}px)`]) // retorno {xs-m:'calc(100px - 20px)', sm-m:'calc(100px - 30px)', ...}
+        //or
+        width: mapMedia({xs:20, sm:30, md:40}, [key, val] => `calc(100px - ${val}px)`) // return -> {xs:'calc(100px - 20px)', sm:'calc(100px - 30px)', md:'calc(100px - 40px)'}
+        //or 
+        width: mapMedia({xs:20, sm:30, md:40}, [key, val] => [`${key}-m`, `calc(100px - ${val}px)`]) // return -> {xs-m:'calc(100px - 20px)', sm-m:'calc(100px - 30px)', ...}
     }))
 
     //...
