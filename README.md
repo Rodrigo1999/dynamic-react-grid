@@ -1,10 +1,10 @@
-# @dynamic/react-grid
+# dynamic-react-grid
 ## Instalação
 ```bash
-    npm install --save @dynamic/react-grid
+    npm install --save dynamic-react-grid
 ```
 ```bash
-    yarn add @dynamic/react-grid
+    yarn add dynamic-react-grid
 ```
 **[DEMO](https://codesandbox.io/s/dinamic-grid-nviw4?file=/src/App.js)**
 ### Grid dinâmica para react, responsíva e inspirada na grade do material-ui, no entanto trazendo maiores simplicidades, funcionalidades e customizações.
@@ -34,7 +34,7 @@ Essa lib foi inspirada na [Grid](https://material-ui.com/pt/components/grid/) do
 eu também posso colocar ramificações de breakpoints para as props mencionadas acima, exemplo:
 
 ```jsx
-    import Grid from '@dynamic/react-grid'
+    import Grid from 'dynamic-react-grid'
 
     <Grid row spacing={2} ou spacing={{xs:1, sm:4, md:3, /*...*/}}>
         <Grid order={1} ou order={{xs:1, sm:2, md:4, /*...*/}}>
@@ -73,7 +73,7 @@ Por padrão há os seguintes pontos de quebra:
 No entanto vc pode criar seus próprios pontos:
 
 ```jsx 
-    import {WithBreakpoints} from '@dynamic/react-grid'
+    import {WithBreakpoints} from 'dynamic-react-grid'
 
     let Grid = WithBreakpoints({
         xs:0,
@@ -86,7 +86,7 @@ No entanto vc pode criar seus próprios pontos:
         ...
     </Grid>
 ```
-> você também pode usar window.breakpoints = {/*...*/} que o @dynamic/react-grid irá detectar automaticamente, mas não é recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações do lado do servidor, pra reverter isso no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
+> você também pode usar window.breakpoints = {/*...*/} que o dynamic-react-grid irá detectar automaticamente, mas não é recomendo; caso vc esteja usando react pode ser, mas se for next não recomendo devido a problemas relacionados à renderizações do lado do servidor, pra reverter isso no lugar de window vc pode usar globalThis, mas aí surge também questões relacionadas à versão javascript ou node.
 
 <br/>
 
@@ -146,7 +146,7 @@ Ambas as 4 colunas abaixo vão ter larguras automáticas, há um flex-grow:1 def
 úteis para serem usadas com styled-components
 
 ```jsx
-    import {media, mapMedia, breakpoints} from '@dynamic/react-grid'
+    import {media, mapMedia, breakpoints} from 'dynamic-react-grid'
 
 
     let Container = styled.div(props => media(breakpoints)({
