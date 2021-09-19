@@ -1,4 +1,4 @@
-export interface Props {
+export interface Props{
     breakpoints?: object,
     row?: boolean,
     direction?: 'row' | 'row-reverse' | 'column' | 'column-reverse' | 'inherit' | 'initial' | 'unset',

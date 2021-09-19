@@ -42,7 +42,7 @@ let Grid = styled(Media)`
     }
 `
 
-let MyGrid: React.ForwardRefRenderFunction<HTMLDivElement, Props>  = function({
+let MyGrid: React.ForwardRefRenderFunction<HTMLDivElement, Props & JSX.IntrinsicElements['div']>  = function({
     children,
     row,
     self,
