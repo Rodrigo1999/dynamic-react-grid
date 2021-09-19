@@ -1,6 +1,6 @@
 {
   "name": "dynamic-react-grid",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Dynamic grid for react, responsive and inspired by the material-ui grid, however bringing greater simplicity, functionality and customization.",
   "main": "./dist/index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "dist"
   ],
   "keywords": [
+    "responsive",
     "grid",
     "dynamic",
     "react-grid",
