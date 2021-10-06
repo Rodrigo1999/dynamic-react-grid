@@ -18,7 +18,8 @@ export interface Props{
     lg?: number,
     'lg-m'?: number,
     xl?: number,
-    children?: any
+    children?: any,
+    style: object
 }
 
 export type Spacing = Props['spacing'];
