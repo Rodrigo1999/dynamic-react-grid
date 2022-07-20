@@ -1,7 +1,7 @@
 import React, {forwardRef} from 'react';
 import styled from '@emotion/styled'
 import {media, mapMedia, breakpoints, getDefinedBreakPoint} from './utils';
-import {Props, PropsMedia, Spacing, mapObjectParams, ReturnGrid} from './types';
+import {Props, Breakpoints, PropsMedia, Spacing, mapObjectParams, ReturnGrid} from './types';
 
 let spacingConst = 4;
 
@@ -93,5 +93,6 @@ function MyGrid({
     )
 }
 export {mapMedia, breakpoints, media} from './utils';
+export type {Props, Breakpoints}
 export let WithBreakpoints = (props:object) => forwardRef(MyGrid.bind({breakpoints:props})) as ReturnGrid;
 export default forwardRef(MyGrid) as ReturnGrid;
