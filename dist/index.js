@@ -42,8 +42,8 @@ var getSpacing = function (spacing) { return utils_1.mapMedia(spacing, function 
 var Media = styled_1.default.div(function (props) { return utils_1.media(props.breakpoints)({
     flexDirection: props.row && props.direction,
     justifyContent: props.row && props.justify,
-    alignContent: props.row && props.align,
-    alignItems: props.row && props.alignItems,
+    alignContent: props.row && props.alignContent,
+    alignItems: props.row && props.align,
     width: (props.row
         && props.breakpoints
         && props[Object.keys(props.breakpoints)[0]] !== true
@@ -114,10 +114,10 @@ var Grid = styled_1.default(Media)(templateObject_1 || (templateObject_1 = __mak
     }),
 }); });
 function MyGrid(_a, ref) {
-    var children = _a.children, row = _a.row, self = _a.self, _b = _a.wrap, wrap = _b === void 0 ? 'wrap' : _b, _c = _a.spacing, spacing = _c === void 0 ? 0 : _c, spacingY = _a.spacingY, spacingX = _a.spacingX, direction = _a.direction, justify = _a.justify, alignItems = _a.alignItems, align = _a.align, order = _a.order, other = __rest(_a, ["children", "row", "self", "wrap", "spacing", "spacingY", "spacingX", "direction", "justify", "alignItems", "align", "order"]);
+    var children = _a.children, row = _a.row, self = _a.self, _b = _a.wrap, wrap = _b === void 0 ? 'wrap' : _b, _c = _a.spacing, spacing = _c === void 0 ? 0 : _c, spacingY = _a.spacingY, spacingX = _a.spacingX, direction = _a.direction, justify = _a.justify, alignContent = _a.alignContent, align = _a.align, order = _a.order, other = __rest(_a, ["children", "row", "self", "wrap", "spacing", "spacingY", "spacingX", "direction", "justify", "alignContent", "align", "order"]);
     var _breakpoints = (this === null || this === void 0 ? void 0 : this.breakpoints) || utils_1.breakpoints;
     _breakpoints = __assign(__assign({}, _breakpoints), utils_1.getDefinedBreakPoint(other));
-    return (jsx_runtime_1.jsx(Grid, __assign({}, other, { row: row, breakpoints: _breakpoints, _wrap: wrap, spacingY: spacingY || spacing, spacingX: spacingX || spacing, justify: justify, align: align, direction: direction, alignItems: alignItems, ref: ref, order: order, self: self }, { children: children }), void 0));
+    return (jsx_runtime_1.jsx(Grid, __assign({}, other, { row: row, breakpoints: _breakpoints, _wrap: wrap, spacingY: spacingY || spacing, spacingX: spacingX || spacing, justify: justify, align: align, direction: direction, alignContent: alignContent, ref: ref, order: order, self: self }, { children: children }), void 0));
 }
 var utils_2 = require("./utils");
 Object.defineProperty(exports, "mapMedia", { enumerable: true, get: function () { return utils_2.mapMedia; } });

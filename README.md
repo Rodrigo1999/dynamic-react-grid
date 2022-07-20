@@ -23,8 +23,8 @@ This lib was inspired by the [Grid](https://material-ui.com/pt/components/grid/)
 | spacingX | `0...infinity` | Defined in the `Grid` tag with `row` props. Indicates the horizontal column spacing, ranging from 0 to infinity. |
 | direction | `row` `row-reverse` `column` `column-reverse` `inherit` `initial` `unset` | flex-direction values |
 | justify | `center` `flex-start` `flex-end` `space-between` `space-around` `inherit` `initial` `unset` | justify-content values |
-| align | `center` `flex-start` `flex-end` `space-between` `space-around` `stretch` `inherit` `initial` `unset` | align-content values |
-| alignItems | `normal` `stretch` `center` `start` `end` `flex-start` `flex-end` `self-start` `self-end` `baseline` `first baseline` `last baseline` `safe center` `unsafe center` `inherit` `initial` `unset` | align-items values |
+| alignContent | `center` `flex-start` `flex-end` `space-between` `space-around` `stretch` `inherit` `initial` `unset` | align-content values |
+| align | `normal` `stretch` `center` `start` `end` `flex-start` `flex-end` `self-start` `self-end` `baseline` `first baseline` `last baseline` `safe center` `unsafe center` `inherit` `initial` `unset` | align-items values |
 | wrap | `nowrap` `wrap` `wrap-reverse` `inherit` `initial` `unset` | flex-wrap values |
 | self | `auto` `center` `flex-start` `flex-end` `baseline` `stretch` `inherit` `initial` `unset` | align-self values. Default `wrap` |
 | order | `0...infinity` | order values |

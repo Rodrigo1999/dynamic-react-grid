@@ -10,8 +10,8 @@ let getSpacing = (spacing: Spacing) => mapMedia(spacing, ([, val]:mapObjectParam
 let Media = styled.div((props: PropsMedia) => media(props.breakpoints)({
     flexDirection: props.row && props.direction,
     justifyContent: props.row && props.justify,
-    alignContent: props.row && props.align,
-    alignItems: props.row && props.alignItems,
+    alignContent: props.row && props.alignContent,
+    alignItems: props.row && props.align,
     width: (
         props.row 
         && props.breakpoints
@@ -64,7 +64,7 @@ function MyGrid({
     spacingX,
     direction,
     justify,
-    alignItems,
+    alignContent,
     align,
     order,
     ...other
@@ -83,7 +83,7 @@ function MyGrid({
             justify={justify} 
             align={align} 
             direction={direction} 
-            alignItems={alignItems}
+            alignContent={alignContent}
             ref={ref}
             order={order}
             self={self}

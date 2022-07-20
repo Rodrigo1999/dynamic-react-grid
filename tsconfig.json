@@ -23,7 +23,7 @@
     "isolatedModules": true,
     "noEmit": false,
     "declaration": true,
-    "removeComments":true,
+    "removeComments":false,
     "jsx": "react-jsx"
   },
   "include": [
