@@ -1,6 +1,4 @@
-export function mapMedia(value: any, map: any): any;
-export function media(breakpoints?: any): (obj: any) => string;
-export let breakpoints: {
+export declare const breakpoints: {
     xs: number;
     'xs-m': number;
     sm: number;
@@ -11,3 +9,8 @@ export let breakpoints: {
     'lg-m': number;
     xl: number;
 };
+export declare function mapMedia(value: any, map: any): any;
+export declare function media(breakpoints?: any): (obj: any) => string;
+export declare function getDefinedBreakPoint(props: {
+    [key: string]: any;
+}): {};

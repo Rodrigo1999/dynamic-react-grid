@@ -19,6 +19,8 @@ This lib was inspired by the [Grid](https://material-ui.com/pt/components/grid/)
 | row | `true/false` | If assigned, indicates to component that it should be a line |
 | xs, xs-m, sm, sm-m, md, md-m, lg, lg-m, xl | recommendable: `0...12` (but it can be from 0 to infinity, but this is madness) | They are the standard breakpoints, but you can customize and create yours (we'll see that later). |
 | spacing | `0...infinity` | Defined in `Grid` tag with `row` props. Indicates column spacing, ranging from 0 to infinity. Default `0` |
+| spacingY | `0...infinity` | Defined in the `Grid` tag with `row` props. Indicates the vertical spacing of columns, ranging from 0 to infinity. |
+| spacingX | `0...infinity` | Defined in the `Grid` tag with `row` props. Indicates the horizontal column spacing, ranging from 0 to infinity. |
 | direction | `row` `row-reverse` `column` `column-reverse` `inherit` `initial` `unset` | flex-direction values |
 | justify | `center` `flex-start` `flex-end` `space-between` `space-around` `inherit` `initial` `unset` | justify-content values |
 | align | `center` `flex-start` `flex-end` `space-between` `space-around` `stretch` `inherit` `initial` `unset` | align-content values |
@@ -36,12 +38,12 @@ I can also put Breakpoints ramifications for the above mentioned props, example:
 ```jsx
     import Grid from 'dynamic-react-grid'
 
-    <Grid row spacing={2} ou spacing={{xs:1, sm:4, md:3, /*...*/}}>
-        <Grid order={1} ou order={{xs:1, sm:2, md:4, /*...*/}}>
+    <Grid row spacing={2} or spacing={{xs:1, sm:4, md:3, /*...*/}}>
+        <Grid order={1} or order={{xs:1, sm:2, md:4, /*...*/}}>
         </Grid>
     </Grid>
 
-    <Grid row direction='row' ou direction={{xs:'row', sm:'row-reverse', md:'column-reverse', /*...*/}}>
+    <Grid row direction='row' or direction={{xs:'row', sm:'row-reverse', md:'column-reverse', /*...*/}}>
         <Grid xs={12} md={6}>
         </Grid>
     </Grid>
@@ -83,10 +85,31 @@ However you can create your own points:
     })
 
     <Grid row>
-        ...
+        <Grid row>
+            <Grid xs={6} jsIsLife={9} reactIsGood={12}>
+                ...
+            </Grid>
+        </Grid>
     </Grid>
 ```
 > you can also use window.breakpoints = {/*...*/} which dynamic-react-grid will automatically detect, but not recommended; if you're using React it can be, but if it's Next I don't recommend it due to problems related to server-side renderings, to revert this instead of window you can use globalThis, but then there are also issues related to the javascript or node version.
+
+<br/>
+
+### If you prefer, you can also work as follows:
+You can enter unique breakpoints for a given `Grid` tag:
+
+```jsx 
+    <Grid row>
+        <Grid row>
+            <Grid bp-sm={100} bp-hello={500} sm={6} hello={9}>
+                ...
+            </Grid>
+        </Grid>
+    </Grid>
+    /*@media(min-width):100 e @media(min-width):500*/
+```
+bp-* is short for breakpoint-*
 
 <br/>
 
@@ -143,7 +166,7 @@ Both 4 columns below will have automatic widths, there is a flex-grow: 1 set by 
 
 ## Public utilities
 
-useful to be used with styled-components
+useful to be used with [@emotion/styled](https://emotion.sh/docs/styled) or [styled-components](https://styled-components.com)
 
 ```jsx
     import {media, mapMedia, breakpoints} from 'dynamic-react-grid'
