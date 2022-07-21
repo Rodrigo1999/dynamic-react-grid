@@ -7,7 +7,10 @@ let spacingConst = 4;
 
 let getSpacing = (spacing: Spacing) => mapMedia(spacing, ([, val]:mapObjectParams) => val * spacingConst * 2);
 
-let Media = styled.div((props: PropsMedia) => media(props.breakpoints)({
+const mediaConstructor = (props: PropsMedia) => media(props.breakpoints)({
+    display: props.row && 'flex',
+    boxSizing: 'border-box',
+    flexGrow: 1,
     flexDirection: props.row && props.direction,
     justifyContent: props.row && props.justify,
     alignContent: props.row && props.alignContent,
@@ -39,13 +42,19 @@ let Media = styled.div((props: PropsMedia) => media(props.breakpoints)({
         return;
     }),
     order: props.order
-}));
-let Grid = styled(Media)`
-    display:${({row}) => row && 'flex'};
-    box-sizing: border-box;
-    flex-grow: 1;
-    & > *{
-        ${props => props.row && media(props.breakpoints)({
+})
+
+const Grid = styled.div(mediaConstructor)
+
+const GridRow = styled(Grid)`
+    & [data-dynamic-react-grid-row]{
+        ${props => {
+            console.log( mediaConstructor(props))
+            return  mediaConstructor(props)
+        }}
+    }
+    & [data-dynamic-react-grid]{
+        ${props => media(props.breakpoints)({
             paddingLeft: props.spacingX && mapMedia(props.spacingX, ([, val]:mapObjectParams) => val * spacingConst),
             paddingRight: props.spacingX && mapMedia(props.spacingX, ([, val]:mapObjectParams) => val * spacingConst),
             paddingTop: props.spacingY && mapMedia(props.spacingY, ([, val]:mapObjectParams) => val * spacingConst),
@@ -72,10 +81,12 @@ function MyGrid({
     let _breakpoints = this?.breakpoints || breakpoints;
     _breakpoints = {..._breakpoints, ...getDefinedBreakPoint(other)}
 
+    const Component = row ? GridRow : Grid
     return (
-        <Grid  
+        <Component  
             {...other}
             row={row}
+            data-dynamic-react-grid
             breakpoints={_breakpoints} 
             _wrap={wrap}
             spacingY={spacingY || spacing}
@@ -89,7 +100,7 @@ function MyGrid({
             self={self}
         >
             {children}
-        </Grid>
+        </Component>
     )
 }
 export {mapMedia, breakpoints, media} from './utils';

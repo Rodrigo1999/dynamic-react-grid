@@ -33,7 +33,7 @@ export function media(breakpoints=(typeof this?.globalThis != 'undefined' ? this
             if(!breakpoint) return css({[key]:obj[key]}).styles;
             if([undefined, false].includes(obj[key][breakpoint])) return null;
             return css({[key]:obj[key][breakpoint]}).styles;
-        }).filter(Boolean).join(';')
+        }).filter(Boolean).join('')
 
         return mapCss
     }
@@ -44,10 +44,10 @@ export function media(breakpoints=(typeof this?.globalThis != 'undefined' ? this
 
             const css = keyMap(obj, breakpoint, true)
             if(!css) return null
-            return `@media only screen and (min-width: ${breakpoints[breakpoint]}px) {${css}}`
-        }).filter(Boolean).join(';')
+            return `@media only screen and (min-width: ${breakpoints[breakpoint]}px) {${css}};`
+        }).filter(Boolean).join('')
 
-        return keyMap(obj).concat(';', propertyIsObjStr);
+        return keyMap(obj).concat(propertyIsObjStr);
     }
 }
 

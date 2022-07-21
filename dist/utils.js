@@ -39,7 +39,7 @@ function media(breakpoints) {
             if ([undefined, false].includes(obj[key][breakpoint]))
                 return null;
             return react_1.css((_b = {}, _b[key] = obj[key][breakpoint], _b)).styles;
-        }).filter(Boolean).join(';');
+        }).filter(Boolean).join('');
         return mapCss;
     }
     return function (obj) {
@@ -47,9 +47,9 @@ function media(breakpoints) {
             var css = keyMap(obj, breakpoint, true);
             if (!css)
                 return null;
-            return "@media only screen and (min-width: " + breakpoints[breakpoint] + "px) {" + css + "}";
-        }).filter(Boolean).join(';');
-        return keyMap(obj).concat(';', propertyIsObjStr);
+            return "@media only screen and (min-width: " + breakpoints[breakpoint] + "px) {" + css + "};";
+        }).filter(Boolean).join('');
+        return keyMap(obj).concat(propertyIsObjStr);
     };
 }
 exports.media = media;
