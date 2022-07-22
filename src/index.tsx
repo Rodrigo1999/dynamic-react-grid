@@ -48,10 +48,7 @@ const Grid = styled.div(mediaConstructor)
 
 const GridRow = styled(Grid)`
     & [data-dynamic-react-grid-row]{
-        ${props => {
-            console.log( mediaConstructor(props))
-            return  mediaConstructor(props)
-        }}
+        ${props => mediaConstructor(props)}
     }
     & [data-dynamic-react-grid]{
         ${props => media(props.breakpoints)({

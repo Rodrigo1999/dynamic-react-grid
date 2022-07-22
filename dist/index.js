@@ -95,12 +95,8 @@ var mediaConstructor = function (props) { return utils_1.media(props.breakpoints
     order: props.order
 }); };
 var Grid = styled_1.default.div(mediaConstructor);
-var GridRow = styled_1.default(Grid)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    & [data-dynamic-react-grid-row]{\n        ", "\n    }\n    & [data-dynamic-react-grid]{\n        ", "\n    }\n"], ["\n    & [data-dynamic-react-grid-row]{\n        ",
-    "\n    }\n    & [data-dynamic-react-grid]{\n        ",
-    "\n    }\n"])), function (props) {
-    console.log(mediaConstructor(props));
-    return mediaConstructor(props);
-}, function (props) { return utils_1.media(props.breakpoints)({
+var GridRow = styled_1.default(Grid)(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    & [data-dynamic-react-grid-row]{\n        ", "\n    }\n    & [data-dynamic-react-grid]{\n        ", "\n    }\n"], ["\n    & [data-dynamic-react-grid-row]{\n        ", "\n    }\n    & [data-dynamic-react-grid]{\n        ",
+    "\n    }\n"])), function (props) { return mediaConstructor(props); }, function (props) { return utils_1.media(props.breakpoints)({
     paddingLeft: props.spacingX && utils_1.mapMedia(props.spacingX, function (_a) {
         var val = _a[1];
         return val * spacingConst;
